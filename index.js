@@ -5,7 +5,7 @@ class Node{
   }
 }
 
-class Stack{
+class StackLinkedLists{
   constructor(value){
     this.head={
       value:value,
@@ -46,9 +46,10 @@ class Stack{
     return array;
   }
 }
-const stack=new Stack(10);
+const stack=new StackLinkedLists(10);
 stack.printElements();
 stack.push(5)
+stack.push(2)
 stack.pop()
 stack.pop()
 stack.peek()
