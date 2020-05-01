@@ -49,17 +49,18 @@ class StackLinkedLists{
 
 class StackArrays{
   constructor(value){
+    this.length=1,
     this.value={
       1:value
-    },
-    this.length=1;
+    }
   }
   push(value){
-    for(let i=1;i<=this.length;i++){
+    for(let i=this.length;i>=1;i--){
+      
      const next= this.value[i];
      this.value[i+1]=next;
     }
-    this.value[this.length]=value;
+    this.value[1]=value;
     this.length++;
     return this;
   }
@@ -68,13 +69,13 @@ class StackArrays{
      const next= this.value[i];
      this.value[i-1]=next;
     }
-    delete this.value[this.length]
+    delete this.value[this.length];
     
     this.length--;
      return this;
   }
   peek(){
-    return this.value[0];
+    return this.value[1];
   }
 }
 
@@ -88,6 +89,7 @@ class StackArrays{
 // stack.peek()
 
 const stack=new StackArrays(10);
+stack.peek()
 stack.push(5);
 stack.push(10);
-// stack.pop();
+stack.pop();
