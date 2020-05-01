@@ -46,10 +46,48 @@ class StackLinkedLists{
     return array;
   }
 }
-const stack=new StackLinkedLists(10);
-stack.printElements();
-stack.push(5)
-stack.push(2)
-stack.pop()
-stack.pop()
-stack.peek()
+
+class StackArrays{
+  constructor(value){
+    this.value={
+      1:value
+    },
+    this.length=1;
+  }
+  push(value){
+    for(let i=1;i<=this.length;i++){
+     const next= this.value[i];
+     this.value[i+1]=next;
+    }
+    this.value[this.length]=value;
+    this.length++;
+    return this;
+  }
+   pop(){
+    for(let i=2;i<=this.length;i++){
+     const next= this.value[i];
+     this.value[i-1]=next;
+    }
+    delete this.value[this.length]
+    
+    this.length--;
+     return this;
+  }
+  peek(){
+    return this.value[0];
+  }
+}
+
+
+// const stack=new StackLinkedLists(10);
+// stack.printElements();
+// stack.push(5)
+// stack.push(2)
+// stack.pop()
+// stack.pop()
+// stack.peek()
+
+const stack=new StackArrays(10);
+stack.push(5);
+stack.push(10);
+// stack.pop();
